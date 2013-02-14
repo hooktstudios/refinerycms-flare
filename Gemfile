@@ -26,6 +26,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'debugger'
+  gem 'awesome_print'
 
   platforms :ruby do
     gem 'spork', '~> 0.9.0'

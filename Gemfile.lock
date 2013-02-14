@@ -39,6 +39,7 @@ GEM
     arel (3.0.2)
     awesome_nested_set (2.1.5)
       activerecord (>= 3.0.0)
+    awesome_print (1.1.0)
     babosa (0.3.9)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
@@ -265,6 +266,7 @@ DEPENDENCIES
   activerecord-jdbcmysql-adapter
   activerecord-jdbcpostgresql-adapter
   activerecord-jdbcsqlite3-adapter
+  awesome_print
   coffee-rails
   debugger
   factory_girl_rails
