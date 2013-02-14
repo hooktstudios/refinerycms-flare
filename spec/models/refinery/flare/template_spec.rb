@@ -3,7 +3,10 @@ require 'spec_helper'
 module Refinery
   module Flare
     describe Template do
-      let(:template) { Template.new(settings) }
+      let(:template) do
+        Template.define_template(settings)
+        Template.all.last
+      end
 
       describe "attribute initialization" do
         let(:fields) {[

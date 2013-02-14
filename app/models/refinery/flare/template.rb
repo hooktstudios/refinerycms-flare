@@ -16,6 +16,19 @@ module Refinery
         end
       end
 
+      class << self
+        def define_template(attributes)
+          template = Template.new(attributes)
+
+          @@all ||= []
+          @@all << template
+        end
+
+        def all
+          @@all
+        end
+      end
+
     end
   end
 end
