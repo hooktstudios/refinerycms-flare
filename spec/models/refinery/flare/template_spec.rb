@@ -21,9 +21,9 @@ module Refinery
             refinery_type_options:  {}}
         ]}
         let(:parts) {[{
-          repeatable: true,
-          fields:     fields,
-          options:    {label: 'Test field'}
+          repeatable:       true,
+          fields:           fields,
+          refinery_options: {title: 'side-column'}
         }]}
         let(:refinery_options){{
           deletable:       false,
@@ -54,15 +54,25 @@ module Refinery
 
         it "should be valid" do
           template.valid?.should == true
+          template.parts.first.valid?.should == true
         end
 
         describe "with invalid refinery options" do
           let(:refinery_options){{
-            stupid_option:   false
+            stupid_option: true
           }}
+          let(:parts) {[{
+            repeatable:       true,
+            fields:           fields,
+            refinery_options: {stupid_option: true}
+          }]}
 
-          it "should be invalid" do
+          it "should be invalid template" do
             template.valid?.should == false
+          end
+
+          it "should have invalid page part" do
+            template.parts.first.valid?.should == false
           end
         end
       end
