@@ -4,6 +4,7 @@ gemspec
 
 gem 'refinerycms', '~> 2.0.9'
 gem 'refinerycms-i18n'
+gem 'refinerycms-pages'
 
 # Database Configuration
 platforms :jruby do
@@ -24,6 +25,7 @@ group :development, :test do
   gem 'guard-rspec', '~> 0.7.0'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'debugger'
 
   platforms :ruby do
     gem 'spork', '~> 0.9.0'

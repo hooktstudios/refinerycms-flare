@@ -59,7 +59,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    columnize (0.3.6)
     database_cleaner (0.7.2)
+    debugger (1.2.4)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.1.1)
+      debugger-ruby_core_source (~> 1.1.7)
+    debugger-linecache (1.1.2)
+      debugger-ruby_core_source (>= 1.1.1)
+    debugger-ruby_core_source (1.1.7)
     devise (2.0.5)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -258,6 +266,7 @@ DEPENDENCIES
   activerecord-jdbcpostgresql-adapter
   activerecord-jdbcsqlite3-adapter
   coffee-rails
+  debugger
   factory_girl_rails
   guard-rspec (~> 0.7.0)
   guard-spork (~> 0.5.2)
@@ -268,6 +277,7 @@ DEPENDENCIES
   refinerycms (~> 2.0.9)
   refinerycms-flare!
   refinerycms-i18n
+  refinerycms-pages
   refinerycms-testing
   rspec-rails
   sass-rails
