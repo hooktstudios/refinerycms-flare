@@ -25,14 +25,15 @@ module Refinery
           fields:     fields,
           options:    {label: 'Test field'}
         }]}
+        let(:refinery_options){{
+          deletable:       false,
+          view_template:   'show',
+          layout_template: 'custom'
+        }}
         let(:settings) {{
           repeatable: true,
           parts: parts,
-          refinery_options: {
-            deletable:       false,
-            view_template:   'show',
-            layout_template: 'custom'
-          }
+          refinery_options: refinery_options
         }}
 
         it "init attributes" do
@@ -49,6 +50,20 @@ module Refinery
         it "has multiple parts fields" do
           template.parts.first.fields.first.title.should == 'string-field'
           template.parts.first.fields.last.title.should == 'resource-field'
+        end
+
+        it "should be valid" do
+          template.valid?.should == true
+        end
+
+        describe "with invalid refinery options" do
+          let(:refinery_options){{
+            stupid_option:   false
+          }}
+
+          it "should be invalid" do
+            template.valid?.should == false
+          end
         end
       end
 

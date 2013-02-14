@@ -2,6 +2,7 @@ module Refinery
   module Flare
     module HashInitializer
       extend ActiveSupport::Concern
+      include ActiveModel::Validations
 
       def initialize(props={})
         props.each_pair { |prop, value| send("#{prop}=", value) }
