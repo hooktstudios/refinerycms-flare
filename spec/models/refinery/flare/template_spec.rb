@@ -4,8 +4,8 @@ module Refinery
   module Flare
     describe Template do
       let(:template) do
-        Template.define_template(settings)
-        Template.all.last
+        Template.define_template('test', settings)
+        Template.all.fetch('test')
       end
 
       describe "attribute initialization" do

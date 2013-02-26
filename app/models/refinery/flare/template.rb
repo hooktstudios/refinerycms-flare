@@ -4,7 +4,7 @@ module Refinery
     class Template
       include HashInitializer
 
-      @@all = []
+      @@all = {}
 
       attr_accessor :repeatable,
         :refinery_options
@@ -23,8 +23,8 @@ module Refinery
           @@all
         end
 
-        def define_template(attributes)
-          Template.all << Template.new(attributes)
+        def define_template(identifier, attributes)
+          Template.all[identifier] = Template.new(attributes)
         end
       end
 
