@@ -1,4 +1,6 @@
 language: ruby
+install:
+  - bundle install --without development
 before_script:
   - "bundle exec rake refinery:testing:dummy_app > /dev/null"
 rvm:
