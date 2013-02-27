@@ -5,6 +5,10 @@ module Refinery
 
   module Flare
     require 'refinery/flare/engine'
+    require 'refinery/flare/hash_initializer'
+    require 'refinery/flare/field'
+    require 'refinery/flare/part'
+    require 'refinery/flare/template'
 
     class << self
       attr_writer :root
