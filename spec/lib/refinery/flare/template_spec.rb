@@ -5,7 +5,7 @@ module Refinery
     describe Template do
       let(:template) do
         Template.define_template('test', settings)
-        Template.all.fetch('test')
+        Template.config.templates.fetch('test')
       end
 
       describe "attribute initialization" do

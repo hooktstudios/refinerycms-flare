@@ -3,8 +3,10 @@ module Refinery
 
     class Template
       include HashInitializer
+      include ActiveSupport::Configurable
 
-      @@all = {}
+      config_accessor :templates
+      self.templates = {}
 
       attr_accessor :repeatable,
         :refinery_options
@@ -19,12 +21,9 @@ module Refinery
       end
 
       class << self
-        def all
-          @@all
-        end
 
         def define_template(identifier, attributes)
-          Template.all[identifier] = Template.new(attributes)
+          Template.config.templates[identifier] = Template.new(attributes)
         end
       end
 
